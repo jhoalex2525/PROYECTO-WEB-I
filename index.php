@@ -5,13 +5,13 @@
     </div>
 </div>
 <div class="row homepageimages">
-    <div class="col-4 picturetype2">
+    <div class="col-md-4 picturetype2">
         <img src="images/room2.jpg" alt="">
     </div>
-    <div class="col-4 picturetype2">
+    <div class="col-md-4 picturetype2">
         <img src="images/room3.jpg" alt="">
     </div>
-    <div class="col-4 picturetype2">
+    <div class="col-md-4 picturetype2">
         <img src="images/room4.jpg" alt="">
     </div>
 </div>
