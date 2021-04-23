@@ -1,6 +1,6 @@
 <?php include_once("../static/layouts/header.php") ?>
 <h1>Registro</h1>
-<form onsubmit="return registerValidation()" method="POST" action="">
+<form onsubmit="return registerValidation()" method="POST" action="create_userdata.php">
     <div class="mb-3">
         <label class="form-label">Nombre completo:</label>
         <input type="text" class="form-control" id="namesignup" name="namesignup" required>

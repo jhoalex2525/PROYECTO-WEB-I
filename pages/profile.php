@@ -1,7 +1,7 @@
 <?php include_once("../static/layouts/header.php") ?>
 <h1>Perfil Anfitrión</h1>
 <div class="row">
-    <div class="co-mdl-6 picturetype1align">
+    <div class="col-md-6 picturetype1align">
         <img class="picturetype1" src="../images/defaultprofile.png" alt="">
     </div>
     <div class="col-md-6">
