@@ -1,5 +1,5 @@
 <?php
-include_once '../database/models/TaskModel.php';
+include_once '../database/models/UsersModel.php';
 //Recibir los datos
 $namesignup = $_POST['namesignup'];
 $emailsignup = $_POST['emailsignup'];
@@ -11,11 +11,12 @@ $photosignup = $_POST['photosignup'];
 $reviewsignup = $_POST['reviewsignup'];
 if(!empty($namesignup)||!empty($emailsignup)||!empty($countrysignup)||!empty($townsignup)||!empty($passwordsignup)||!empty($reviewsignup))
 {
-    $taskModel = new TaskModel();
-    $taskModel->insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup);
+    $UsersModel = new UsersModel();
+    $UsersModel->insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup);
 }
 else
 {
-    echo "Falló la conexión con la base de datos";
+    echo "Falló la conexión con la BD";
 }
+header("Location: /PROYECTO WEB I/index.php");
 ?>
