@@ -1,6 +1,7 @@
 <?php include_once("../static/layouts/header.php") ?>
 <h1>Iniciar Sesión</h1>
-<form onsubmit="return loginValidation()" method="POST" action="">
+
+<form onsubmit="return loginValidation()" method="POST" action="login_validation.php">
     <div class="mb-3">
         <label class="form-label">Correo electrónico:</label>
         <input type="email" class="form-control" id="emaillogin" name="emaillogin" required>

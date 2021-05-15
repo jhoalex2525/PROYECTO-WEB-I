@@ -1,7 +1,11 @@
 <?php include_once("../static/layouts/header.php") ?>
 <h1>Añadir Apartamento</h1>
-<form onsubmit="return addApartmentValidation()" method="POST" action="">
-<div class="mb-3">
+<form onsubmit="return addApartmentValidation()" method="POST" action="create_apartment.php">
+    <div class="mb-3">
+        <label class="form-label">Correo electrónico:</label>
+        <input type="email" class="form-control" id="emailadd" name="emailadd" required>
+    </div>
+    <div class="mb-3">
         <label class="form-label">Ciudad:</label>
         <input type="text" class="form-control" id="townadd" name="townadd" required>
     </div>
@@ -19,15 +23,15 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Número de habitaciones:</label>
-        <input type="text" class="form-control" id="numberadd" name="numberadd" required>
+        <input type="number" class="form-control" id="numberadd" name="numberadd" required>
     </div>
     <div class="mb-3">
         <label class="form-label">Valor noche:</label>
-        <input type="text" class="form-control" id="valueadd" name="valueadd" required>
+        <input type="number" step="any"class="form-control" id="valueadd" name="valueadd" required>
     </div>    
     <div class="mb-3">
         <label class="form-label">Reseña habitación:</label>
-        <textarea type="text" class="form-control" style="height:200px" id="roomreviewsignup" name="roomreviewsignup" required></textarea>
+        <textarea type="text" class="form-control" style="height:200px" id="roomreviewadd" name="roomreviewadd" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
