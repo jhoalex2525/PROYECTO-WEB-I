@@ -31,7 +31,7 @@ class ApartmentModel
             $this->db->close();
         }
     }
-    public function getApartments(){
+    public function getApartments($email){
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL";
             exit();
@@ -39,16 +39,56 @@ class ApartmentModel
         //consultar todos los registros de la bd
         else {
             echo "Conexión correcta";
-            $sql = "SELECT * FROM apartmentdata";
-            $apartments = $this->db->query($sql);            
-            $this->db->close();
+            $sql = "SELECT * FROM apartmentdata WHERE email = '{$email}'";            
+            $apartments = $this->db->query($sql);  
             return $apartments;
         }
     }
-    public function getApartment($email){ //Clave en la URL
-        $sql = "SELECT * FROM apartmentdata WHERE email = {$email}";
+    public function getApartment($id){ //Clave en la URL
+        $sql = "SELECT * FROM apartmentdata WHERE id = {$id}";
         $apartment = $this->db->query($sql)->fetch_assoc(); //revisar
         return $apartment;
+    }    
+    public function updateApartment($id, $emailedit, $townedit, $countryedit, $addressedit, $gpsedit, $numberedit, $valueedit, $roomreviewedit)
+    {
+        if ($this->db->connect_errno) {
+            echo "Falló la conexión a MySQL";
+            exit();
+        }
+        //Actualizar registro a bd
+        else {			
+            echo "Conexión a BD correcta, ";
+            $sql = "UPDATE apartmentdata SET email = '{$emailedit}', town = '{$townedit}', country = '{$countryedit}', address = '{$addressedit}', 
+                                             gps = '{$gpsedit}', rooms = '{$numberedit}', value = '{$valueedit}', roomreview = '{$roomreviewedit}'
+                                             WHERE id = '{$id}'";
+            //Verifica query
+            if ($this->db->query($sql) === TRUE) {
+                echo "Actualización de habitación exitosa";
+            } else {
+                echo "pero hubo error al actualizar la habitación";
+            }
+            //termina ejecución    
+            $this->db->close();
+        }
     }
-    //Acá insertar otra funcion con el envio de info la otra tabla pero mejor crear otro UsersModel
+    public function deleteApartment($id)
+    {
+        if ($this->db->connect_errno) {
+            echo "Falló la conexión a MySQL";
+            exit();
+        }
+        //Actualizar registro a bd
+        else {			
+            echo "Conexión a BD correcta, ";
+            $sql = "DELETE FROM apartmentdata WHERE id = '{$id}'";
+            //Verifica query
+            if ($this->db->query($sql) === TRUE) {
+                echo "Eliminación de habitación exitosa";
+            } else {
+                echo "pero hubo error al Eliminar la habitación";
+            }
+            //termina ejecución    
+            $this->db->close();
+        }
+    }
 }
