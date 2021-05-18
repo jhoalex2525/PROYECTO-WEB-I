@@ -6,8 +6,8 @@
     $id = $_GET['id'];    
     $getUser = $usersModel -> getUser($id);    
     print_r($getUser);    
-    print_r($id);    
-    print_r($getUser['email'])
+    print_r($id);
+    session_start();
 ?>
 <div class="row">
     <div class="col-md-6 picturetype1align">
@@ -28,7 +28,7 @@
                 <textarea type="text" class="form-control" style="height:125px" id="reviewprofile" name="reviewprofile" selected disabled><?php echo $getUser['personalreview']?></textarea>
             </div>
             <input type="button" value="Actualizar Información" onclick="window.location.href='edit_profile.php?id=<?php echo ($id);?>'" class="btn btn-primary">
-            <input type="button" value="Mis Apartamentos" onclick="window.location.href='apartmentowner.php?email=<?php echo ($getUser['email']);?>'" class="btn btn-primary">
+            <input type="button" value="Mis Apartamentos" onclick="window.location.href='list_apartments.php'" class="btn btn-primary">
         </form>
     </div>
 </div>

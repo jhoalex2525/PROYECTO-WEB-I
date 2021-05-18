@@ -12,8 +12,8 @@ $roomreviewadd = $_POST['roomreviewadd'];
 
 if(!empty($emailadd)||!empty($townadd)||!empty($countryadd)||!empty($addressadd)||!empty($gpsadd)||!empty($numberadd)||!empty($valueadd)||!empty($roomreviewadd))
 {
-    $ApartmentModel = new ApartmentModel();
-    $ApartmentModel->insert($emailadd,$townadd,$countryadd,$addressadd,$gpsadd,$numberadd,$valueadd,$roomreviewadd);
+    $apartmentModel = new ApartmentModel();
+    $apartmentModel->insert($emailadd,$townadd,$countryadd,$addressadd,$gpsadd,$numberadd,$valueadd,$roomreviewadd);
 }
 else
 {
