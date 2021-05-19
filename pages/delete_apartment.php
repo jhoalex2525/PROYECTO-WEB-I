@@ -1,18 +1,9 @@
 <?php
-include_once '../database/models/ApartmentModel.php';
-$id = $_GET['id'];
-// $emailedit = $_POST['emailedit'];
-// $townedit = $_POST['townedit'];
-// $countryedit = $_POST['countryedit'];
-// $addressedit = $_POST['addressedit'];
-// $gpsedit = $_POST['gpsedit'];
-// $numberedit = $_POST['numberedit'];
-// $valueedit = $_POST['valueedit'];
-// $roomreviewedit = $_POST['roomreviewedit'];
-
-
+    include_once '../static/session/anfitrion_session.php';
+    include_once '../database/models/ApartmentModel.php';
+    $id = $_GET['id'];
     $apartmentModel = new ApartmentModel();
     $apartmentModel->deleteApartment($id);
-
-header("Location: list_apartments.php");
+    echo "<script>alert('El apartamento han sido eliminado');
+                window.location='list_apartments.php'</script>";
 ?>

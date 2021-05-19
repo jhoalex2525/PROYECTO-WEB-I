@@ -1,7 +1,9 @@
 <?php
+include_once '../static/session/anfitrion_session.php';
+
 include_once '../database/models/ApartmentModel.php';
 //Recibir los datos
-$emailadd = $_POST['emailadd'];
+$emailadd = $_SESSION['email'];
 $townadd = $_POST['townadd'];
 $countryadd = $_POST['countryadd'];
 $addressadd = $_POST['addressadd'];
@@ -14,10 +16,13 @@ if(!empty($emailadd)||!empty($townadd)||!empty($countryadd)||!empty($addressadd)
 {
     $apartmentModel = new ApartmentModel();
     $apartmentModel->insert($emailadd,$townadd,$countryadd,$addressadd,$gpsadd,$numberadd,$valueadd,$roomreviewadd);
+    echo "<script>alert('El apartamento han sido creado');
+              window.location='list_apartments.php'</script>";
 }
 else
 {
-    echo "Falló la conexión con la BD";
+    echo "<script>alert('Falló la creación del apartamento');
+              window.location='addapartment.php'</script>";
 }
-header("Location: /PROYECTO WEB I/index.php");
+
 ?>

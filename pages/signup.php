@@ -23,7 +23,7 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Rol:</label>
-        <select name="rolesignup" class="form-control" id="rolesignup">
+        <select name="rolesignup" class="form-control" id="rolesignup" required>
             <option value="null" selected disabled>Seleccione un rol</option>
             <option value="anfitrion">Anfitrión</option>
             <option value="invitado">Invitado</option>
