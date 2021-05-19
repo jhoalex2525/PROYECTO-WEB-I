@@ -1,13 +1,12 @@
 <?php include_once("../static/layouts/header.php") ?>
 <h1>Perfil Anfitrión</h1>
 <?php 
+    include_once '../static/session/general_session.php';
+    $id = $_SESSION['id']; 
+    $role = $_SESSION['role'];
     include_once '../database/models/UsersModel.php';
     $usersModel = new UsersModel();
-    $id = $_GET['id'];    
-    $getUser = $usersModel -> getUser($id);    
-    print_r($getUser);    
-    print_r($id);
-    session_start();
+    $getUser = $usersModel -> getUser($id);        
 ?>
 <div class="row">
     <div class="col-md-6 picturetype1align">
@@ -17,18 +16,29 @@
         <form method="POST" action="">
             <div class="mb-3">
                 <label class="form-label">Nombre completo:</label>
-                <input type="text" class="form-control" id="nameprofile" name="nameprofile" selected disabled value="<?php echo $getUser['name']?>">
+                <input type="text" class="form-control" id="nameprofile" name="nameprofile" disabled value="<?php echo $getUser['name']?>">
             </div>
             <div class="mb-3">
                 <label class="form-label">Ciudad:</label>
-                <input type="text" class="form-control" id="townprofile" name="townprofile" selected disabled value="<?php echo $getUser['town']?>">
+                <input type="text" class="form-control" id="townprofile" name="townprofile" disabled value="<?php echo $getUser['town']?>">
             </div>
             <div class="mb-3">
                 <label class="form-label">Reseña personal:</label>
-                <textarea type="text" class="form-control" style="height:125px" id="reviewprofile" name="reviewprofile" selected disabled><?php echo $getUser['personalreview']?></textarea>
+                <textarea type="text" class="form-control" style="height:125px" id="reviewprofile" name="reviewprofile" disabled><?php echo $getUser['personalreview']?></textarea>
             </div>
-            <input type="button" value="Actualizar Información" onclick="window.location.href='edit_profile.php?id=<?php echo ($id);?>'" class="btn btn-primary">
-            <input type="button" value="Mis Apartamentos" onclick="window.location.href='list_apartments.php'" class="btn btn-primary">
+            <?php
+            if($role == 'Anfitrión'){
+                $template="
+                <a type='button' href='edit_profile.php' class='btn btn-primary'>Actualizar información</a>
+                <a type='button' href='list_apartments.php' class='btn btn-primary'>Mis Apartamentos</a>";
+                echo ($template);
+            }
+            else{
+                $template="
+                <a type='button' href='edit_profile.php' class='btn btn-primary'>Actualizar información</a>";                
+                echo ($template);
+            }            
+            ?>
         </form>
     </div>
 </div>

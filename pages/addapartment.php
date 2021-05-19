@@ -1,10 +1,7 @@
 <?php include_once("../static/layouts/header.php") ?>
 <h1>Añadir Apartamento</h1>
-<form onsubmit="return addApartmentValidation()" method="POST" action="create_apartment.php">
-    <div class="mb-3">
-        <label class="form-label">Correo electrónico:</label>
-        <input type="email" class="form-control" id="emailadd" name="emailadd" required>
-    </div>
+<?php include_once("../static/session/anfitrion_session.php") ?>
+<form onsubmit="return addApartmentValidation()" method="POST" action="create_apartment.php">    
     <div class="mb-3">
         <label class="form-label">Ciudad:</label>
         <input type="text" class="form-control" id="townadd" name="townadd" required>
@@ -34,5 +31,6 @@
         <textarea type="text" class="form-control" style="height:200px" id="roomreviewadd" name="roomreviewadd" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
+    <input type="button" value="Cancelar" onclick="window.location.href='list_apartments.php'" class="btn btn-primary">
 </form>
 <?php include_once("../static/layouts/footer.php") ?>

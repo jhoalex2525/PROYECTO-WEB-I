@@ -13,19 +13,18 @@ class ApartmentModel
     public function insert($emailadd,$townadd, $countryadd, $addressadd, $gpsadd, $numberadd, $valueadd, $roomreviewadd)
     {
         if ($this->db->connect_errno) {
-            echo "Falló la conexión a MySQL";
+            echo "Falló la conexión a MySQL de apartamentos";
             exit();
         }
         //agregar registro a bd
-        else {			
-            echo "Conexión a BD correcta, ";
+        else {
             $sql = "INSERT INTO apartmentdata (email,town,country,address,gps,rooms,value,roomreview) VALUES
             ('{$emailadd}','{$townadd}','{$countryadd}','{$addressadd}','{$gpsadd}','{$numberadd}','{$valueadd}','{$roomreviewadd}')";
             //Verifica query
             if ($this->db->query($sql) === TRUE) {
-                echo "registro de usuario exitoso";
+                echo "Registro de apartamento exitoso";
             } else {
-                echo "pero hubo error al registrar el usuario";
+                echo "Se presentó error al registrar el usuario";
             }
             //termina ejecución    
             $this->db->close();
@@ -33,12 +32,11 @@ class ApartmentModel
     }
     public function getApartments($email){
         if ($this->db->connect_errno) {
-            echo "Falló la conexión a MySQL";
+            echo "Falló la conexión a MySQL de apartamentos";
             exit();
         }
         //consultar todos los registros de la bd
-        else {
-            echo "Conexión correcta";
+        else {            
             $sql = "SELECT * FROM apartmentdata WHERE email = '{$email}'";            
             $apartments = $this->db->query($sql);  
             return $apartments;
@@ -46,18 +44,17 @@ class ApartmentModel
     }
     public function getApartment($id){ //Clave en la URL
         $sql = "SELECT * FROM apartmentdata WHERE id = {$id}";
-        $apartment = $this->db->query($sql)->fetch_assoc(); //revisar
+        $apartment = $this->db->query($sql)->fetch_assoc();
         return $apartment;
     }    
     public function updateApartment($id, $emailedit, $townedit, $countryedit, $addressedit, $gpsedit, $numberedit, $valueedit, $roomreviewedit)
     {
         if ($this->db->connect_errno) {
-            echo "Falló la conexión a MySQL";
+            echo "Falló la conexión a MySQL de apartamentos";
             exit();
         }
         //Actualizar registro a bd
-        else {			
-            echo "Conexión a BD correcta, ";
+        else {			            
             $sql = "UPDATE apartmentdata SET email = '{$emailedit}', town = '{$townedit}', country = '{$countryedit}', address = '{$addressedit}', 
                                              gps = '{$gpsedit}', rooms = '{$numberedit}', value = '{$valueedit}', roomreview = '{$roomreviewedit}'
                                              WHERE id = '{$id}'";
@@ -65,7 +62,7 @@ class ApartmentModel
             if ($this->db->query($sql) === TRUE) {
                 echo "Actualización de habitación exitosa";
             } else {
-                echo "pero hubo error al actualizar la habitación";
+                echo "Se presentó error al actualizar la habitación";
             }
             //termina ejecución    
             $this->db->close();
@@ -74,18 +71,17 @@ class ApartmentModel
     public function deleteApartment($id)
     {
         if ($this->db->connect_errno) {
-            echo "Falló la conexión a MySQL";
+            echo "Falló la conexión a MySQL  de apartamentos";
             exit();
         }
         //Actualizar registro a bd
-        else {			
-            echo "Conexión a BD correcta, ";
+        else {			            
             $sql = "DELETE FROM apartmentdata WHERE id = '{$id}'";
             //Verifica query
             if ($this->db->query($sql) === TRUE) {
                 echo "Eliminación de habitación exitosa";
             } else {
-                echo "pero hubo error al Eliminar la habitación";
+                echo "Se presentó error al Eliminar la habitación";
             }
             //termina ejecución    
             $this->db->close();

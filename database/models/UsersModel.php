@@ -13,19 +13,18 @@ class UsersModel
     public function insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup)
     {
         if ($this->db->connect_errno) {
-            echo "Falló la conexión a MySQL";
+            echo "Falló la conexión a MySQL de usuarios";
             exit();
         }
         //agregar registro a bd
-        else {
-            echo "Conexión a BD correcta, ";
+        else {            
             $sql = "INSERT INTO userdata (name,email,country,town,password,role,photo,personalreview) VALUES
             ('{$namesignup}','{$emailsignup}','{$countrysignup}','{$townsignup}','{$passwordsignup}','{$rolesignup}','{$photosignup}','{$reviewsignup}')";
             //Verifica query
             if ($this->db->query($sql) === TRUE) {
-                echo "registro de usuario exitoso";
+                echo "Registro de usuario exitoso";
             } else {
-                echo "pero hubo error al registrar el usuario";
+                echo "Se presentó error al registrar el usuario";
             }
             //termina ejecución    
             $this->db->close();
@@ -33,7 +32,7 @@ class UsersModel
     }
     public function userValidation($emaillogin,$passwordlogin){
         if ($this->db->connect_errno) {
-            echo "Falló la conexión a MySQL";
+            echo "Falló la conexión a MySQL de usuarios";
             exit();
         }
         else {
@@ -42,33 +41,30 @@ class UsersModel
             $this->db->close();
             return $user;
         }
-    }
-    // public function getUserToEdit(){
-    //     if ($this->db->connect_errno) {
-    //         echo "Falló la conexión a MySQL";
-    //         exit();
-    //     }
-    //     //consultar todos los registros de la bd
-    //     else {
-    //         echo "Conexión correcta";
-    //         $sql = "SELECT * FROM userdata";
-    //         $user = $this->db->query($sql);            
-    //         $this->db->close();
-    //         return $user;
-    //     }
-    // }
+    }    
     public function getUser($id){ //Clave en la URL
         $sql = "SELECT * FROM userdata WHERE id = {$id}";
         $user = $this->db->query($sql)->fetch_assoc();
         return $user;
     }
-    public function updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, 
-                               $passwordedit, $roleedit, $photoedit, $reviewedit){
+    public function updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, $passwordedit, $roleedit, $photoedit, $reviewedit){
+        if ($this->db->connect_errno) {
+            echo "Falló la conexión a MySQL de usuarios";
+            exit();
+        }
+        //Actualizar registro a bd
+        else {
         $sql ="UPDATE userdata SET name = '{$nameedit}', email  = '{$emailedit}', country = '{$countryedit}', town = '{$townedit}',
                                    password = '{$passwordedit}', role = '{$roleedit}', photo = '{$photoedit}', personalreview = '{$reviewedit}'
                                 WHERE id = '{$id}'";
-        $this->db->query($sql);
-        $this->db->close();
-    }
-    //Acá insertar otra funcion con el envio de info la otra tabla pero mejor crear otro UsersModel
+        //Verifica query
+        if ($this->db->query($sql) === TRUE) {
+            echo "Actualización de usuario exitosa";
+        } else {
+            echo "Se presentó error al actualizar el usuario";
+        }
+        //termina ejecución    
+        $this->db->close();        
+        }
+    }    
 }

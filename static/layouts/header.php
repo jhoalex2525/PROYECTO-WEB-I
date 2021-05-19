@@ -35,3 +35,4 @@
                 </div>
             </div>
         </nav>
+        <input type="button" value="Cerrar sesión" onclick="window.location.href='/PROYECTO WEB I/pages/logout_validation.php'" class="btn btn-primary">

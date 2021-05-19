@@ -5,8 +5,8 @@ function addApartmentValidation(){
     let gpsadd = document.getElementById("gpsadd").value;
     let numberadd = document.getElementById("numberadd").value;
     let valueadd = document.getElementById("valueadd").value;
-    let roomreviewsignup = document.getElementById("roomreviewsignup").value;
-    if (townadd == "" || countryadd == "" || addressadd == "" || gpsadd == "" || numberadd == "" || valueadd == "" || roomreviewsignup == "") {
+    let roomreviewadd = document.getElementById("roomreviewadd").value;
+    if (townadd == "" || countryadd == "" || addressadd == "" || gpsadd == "" || numberadd == "" || valueadd == "" || roomreviewadd == "") {
         alert("Todos los campos deben ser diligenciados");
         return false;
     }    
