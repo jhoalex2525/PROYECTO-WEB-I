@@ -11,11 +11,12 @@ $gpsadd = $_POST['gpsadd'];
 $numberadd = $_POST['numberadd'];
 $valueadd = $_POST['valueadd'];
 $roomreviewadd = $_POST['roomreviewadd'];
+$photoadd = $_POST['photoadd'];
 
-if(!empty($emailadd)||!empty($townadd)||!empty($countryadd)||!empty($addressadd)||!empty($gpsadd)||!empty($numberadd)||!empty($valueadd)||!empty($roomreviewadd))
+if(!empty($emailadd)||!empty($townadd)||!empty($countryadd)||!empty($addressadd)||!empty($gpsadd)||!empty($numberadd)||!empty($valueadd)||!empty($roomreviewadd)||!empty($photoadd))
 {
     $apartmentModel = new ApartmentModel();
-    $apartmentModel->insert($emailadd,$townadd,$countryadd,$addressadd,$gpsadd,$numberadd,$valueadd,$roomreviewadd);
+    $apartmentModel->insert($emailadd,$townadd,$countryadd,$addressadd,$gpsadd,$numberadd,$valueadd,$roomreviewadd,$photoadd);
     echo "<script>alert('El apartamento han sido creado');
               window.location='list_apartments.php'</script>";
 }

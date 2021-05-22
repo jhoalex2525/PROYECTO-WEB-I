@@ -30,6 +30,10 @@
         <label class="form-label">Reseña habitación:</label>
         <textarea type="text" class="form-control" style="height:200px" id="roomreviewadd" name="roomreviewadd" required></textarea>
     </div>
+    <div class="mb-3">
+        <label class="form-label">Foto de vivienda:</label>
+        <input type="text" class="form-control" id="photoadd" name="photoadd" required>
+    </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
     <input type="button" value="Cancelar" onclick="window.location.href='list_apartments.php'" class="btn btn-primary">
 </form>

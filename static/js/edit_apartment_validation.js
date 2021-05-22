@@ -6,7 +6,8 @@ function editApartmentValidation(){
     let numberedit = document.getElementById("numberedit").value;
     let valueedit = document.getElementById("valueedit").value;
     let roomreviewedit = document.getElementById("roomreviewedit").value;
-    if (townedit == "" || countryedit == "" || addressedit == "" || gpsedit == "" || numberedit == "" || valueedit == "" || roomreviewedit == "") {
+    let photoedit = document.getElementById("photoedit").value;
+    if (townedit == "" || countryedit == "" || addressedit == "" || gpsedit == "" || numberedit == "" || valueedit == "" || roomreviewedit == "" || photoedit == "") {
         alert("Todos los campos deben ser diligenciados");
         return false;
     }    
