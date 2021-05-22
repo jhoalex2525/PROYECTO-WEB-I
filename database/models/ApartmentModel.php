@@ -10,7 +10,7 @@ class ApartmentModel
         //Obtengo la conexión
         $this->db = $dbConnection->connect();
     }
-    public function insert($emailadd,$townadd, $countryadd, $addressadd, $gpsadd, $numberadd, $valueadd, $roomreviewadd)
+    public function insert($emailadd,$townadd, $countryadd, $addressadd, $gpsadd, $numberadd, $valueadd, $roomreviewadd, $photoadd)
     {
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL de apartamentos";
@@ -18,8 +18,8 @@ class ApartmentModel
         }
         //agregar registro a bd
         else {
-            $sql = "INSERT INTO apartmentdata (email,town,country,address,gps,rooms,value,roomreview) VALUES
-            ('{$emailadd}','{$townadd}','{$countryadd}','{$addressadd}','{$gpsadd}','{$numberadd}','{$valueadd}','{$roomreviewadd}')";
+            $sql = "INSERT INTO apartmentdata (email,town,country,address,gps,rooms,value,roomreview,photo) VALUES
+            ('{$emailadd}','{$townadd}','{$countryadd}','{$addressadd}','{$gpsadd}','{$numberadd}','{$valueadd}','{$roomreviewadd}','{$photoadd}')";
             //Verifica query
             if ($this->db->query($sql) === TRUE) {
                 echo "Registro de apartamento exitoso";
@@ -47,7 +47,7 @@ class ApartmentModel
         $apartment = $this->db->query($sql)->fetch_assoc();
         return $apartment;
     }    
-    public function updateApartment($id, $emailedit, $townedit, $countryedit, $addressedit, $gpsedit, $numberedit, $valueedit, $roomreviewedit)
+    public function updateApartment($id, $emailedit, $townedit, $countryedit, $addressedit, $gpsedit, $numberedit, $valueedit, $roomreviewedit,$photoedit)
     {
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL de apartamentos";
@@ -56,7 +56,8 @@ class ApartmentModel
         //Actualizar registro a bd
         else {			            
             $sql = "UPDATE apartmentdata SET email = '{$emailedit}', town = '{$townedit}', country = '{$countryedit}', address = '{$addressedit}', 
-                                             gps = '{$gpsedit}', rooms = '{$numberedit}', value = '{$valueedit}', roomreview = '{$roomreviewedit}'
+                                             gps = '{$gpsedit}', rooms = '{$numberedit}', value = '{$valueedit}', roomreview = '{$roomreviewedit}',
+                                             photo = '{$photoedit}'
                                              WHERE id = '{$id}'";
             //Verifica query
             if ($this->db->query($sql) === TRUE) {

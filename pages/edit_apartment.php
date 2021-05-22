@@ -36,6 +36,10 @@
             <label class="form-label">Reseña habitación:</label>
             <textarea type="text" class="form-control" style="height:200px" id="roomreviewedit" name="roomreviewedit" required><?php echo $apartment['roomreview']?></textarea>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Foto de vivienda:</label>
+            <input type="text" class="form-control" id="photoedit" name="photoedit" required value="<?php echo $apartment['photo']?>">
+        </div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 <?php include_once("../static/layouts/footer.php") ?>

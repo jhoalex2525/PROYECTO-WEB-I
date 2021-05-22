@@ -10,10 +10,11 @@
     $numberedit = $_POST['numberedit'];
     $valueedit = $_POST['valueedit'];
     $roomreviewedit = $_POST['roomreviewedit'];
-    if(!empty($emailedit)||!empty($townedit)||!empty($countryedit)||!empty($addressedit)||!empty($gpsedit)||!empty($numberedit)||!empty($valueedit)||!empty($roomreviewedit))
+    $photoedit = $_POST['photoedit'];
+    if(!empty($emailedit)||!empty($townedit)||!empty($countryedit)||!empty($addressedit)||!empty($gpsedit)||!empty($numberedit)||!empty($valueedit)||!empty($roomreviewedit)||!empty($photoedit))
     {
         $apartmentModel = new ApartmentModel();
-        $apartmentModel->updateApartment($id, $emailedit, $townedit, $countryedit, $addressedit, $gpsedit, $numberedit, $valueedit, $roomreviewedit);
+        $apartmentModel->updateApartment($id, $emailedit, $townedit, $countryedit, $addressedit, $gpsedit, $numberedit, $valueedit, $roomreviewedit,$photoedit);
         echo "<script>alert('Los datos de su apartamento han sido actualizados');
                 window.location='list_apartments.php'</script>";
     }
