@@ -12,7 +12,7 @@
     $template = "
     <div class='row'>
         <div class='col-md-6 mb-3 picturetype1align'>
-            <img class='picturetype1' src='../images/room1.jpeg' alt=''>
+            <img class='picturetype1' src='{$row['photo']}' alt=''>
         </div>
         <div class='col-md-6'>
             <form>

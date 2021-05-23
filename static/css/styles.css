@@ -8,8 +8,8 @@ body{
 .iconlogo{
     width: 15%;
 }
-.picturetype1{
-    width: 100%;    
+.picturetype1 img{
+    width: 90%;
 }
 .picturetype1align, .homepageimages, .coverpagelogo{
     text-align: center;
