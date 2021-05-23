@@ -9,6 +9,7 @@
         while ($row = mysqli_fetch_assoc($user)) {               
             $role =  $row['role'];        
             $id =  $row['id'];
+            $emaillogin =  $row['email'];
             session_start();
             $_SESSION['email'] = $emaillogin;         
             $_SESSION['password'] = $passwordlogin;         

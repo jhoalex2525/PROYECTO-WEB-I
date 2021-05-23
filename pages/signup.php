@@ -39,4 +39,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+<!-- Poner boton cancelar y poner un letrero que diga registrado -->
 <?php include_once("../static/layouts/footer.php") ?>

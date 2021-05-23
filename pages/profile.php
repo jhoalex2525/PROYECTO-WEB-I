@@ -10,7 +10,7 @@
 ?>
 <div class="row">
     <div class="col-md-6 picturetype1align">
-        <img class="picturetype1" src="../images/defaultprofile.png" alt="">
+        <img class="picturetype1" src="<?php echo $getUser['photo']?>" alt="">
     </div>
     <div class="col-md-6">
         <form method="POST" action="">
@@ -42,4 +42,4 @@
         </form>
     </div>
 </div>
-<?php include_once("../static/layouts/footer.php") ?>
+<?php include_once("../static/layouts/footer.php")  ?>
