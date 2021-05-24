@@ -4,8 +4,7 @@
     <script src="<?php echo'../static/js/login_validation.js'?>"></script>
     <script src="<?php echo'../static/js/add_apartm_validation.js'?>"></script>
     <script src="<?php echo'../static/js/edit_apartment_validation.js'?>"></script>
-    <script src="<?php echo'../static/js/edit_profile_validation.js'?>"></script>
-    <!-- Agregar JS nuevos -->
+    <script src="<?php echo'../static/js/edit_profile_validation.js'?>"></script>    
 </body>
 
 </html>

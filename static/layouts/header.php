@@ -18,21 +18,10 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="iconnavbar">
-                    <img class="iconlogo" src="/PROYECTO WEB I/images/iconlogo.png" alt="">                    
+                    <img class="iconlogo" src="/PROYECTO WEB I/images/iconlogo.png" alt="" onclick="window.location.href='/PROYECTO WEB I/index.php'">                    
                     <h class="bungeecss">WEROOMMATES</h1>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="/PROYECTO WEB I/index.php">Inicio</a>
-                        <a class="nav-link" href="/PROYECTO WEB I/pages/login.php">Iniciar sesión</a>
-                        <a class="nav-link" href="/PROYECTO WEB I/pages/signup.php">Registrarse</a>
-                        <a class="nav-link" href="/PROYECTO WEB I/pages/profile.php">Perfil anfitrion</a>
-                        <a class="nav-link" href="/PROYECTO WEB I/pages/addapartment.php">Añadir apartamento</a>
-                        <a class="nav-link" href="/PROYECTO WEB I/pages/apartmentowner.php">Apartamentos por anfitrion</a>
-                    </div>
-                </div>
+                    <input type="button" value="Login" onclick="window.location.href='/PROYECTO WEB I/pages/login.php'" class="btn btn-primary">
+                </div>                
             </div>
         </nav>
         <input type="button" value="Cerrar sesión" onclick="window.location.href='/PROYECTO WEB I/pages/logout_validation.php'" class="btn btn-primary">
