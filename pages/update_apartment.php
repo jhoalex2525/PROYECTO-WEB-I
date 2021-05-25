@@ -1,5 +1,6 @@
 <?php
-    include_once '../static/session/anfitrion_session.php';
+    $sessiontype = 'anfitrion';
+    include_once '../static/session/session_validations.php';
     $emailedit = $_SESSION['email'];
     include_once '../database/models/ApartmentModel.php';
     $id = $_GET['id'];

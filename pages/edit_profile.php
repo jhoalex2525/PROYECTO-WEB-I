@@ -1,7 +1,9 @@
-<?php include_once("../static/layouts/header.php") ?>
+<?php 
+$sessiontype = 'all';
+include_once("../static/layouts/header.php");
+?>
     <h1>Editar Perfil</h1>
 <?php 
-    include_once '../static/session/general_session.php';
     $id = $_SESSION['id'];
     $email = $_SESSION['email'];
     $role = $_SESSION['role'];

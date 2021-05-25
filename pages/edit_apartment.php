@@ -1,7 +1,9 @@
-<?php include_once("../static/layouts/header.php") ?>
+<?php
+$sessiontype = 'anfitrion';
+include_once("../static/layouts/header.php");
+?>
     <h1>Editar Apartamento</h1>
 <?php
-    include_once '../static/session/anfitrion_session.php';
     include_once '../database/models/ApartmentModel.php';
     $apartmentModel = new ApartmentModel();
     $id = $_GET['id'];

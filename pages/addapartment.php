@@ -1,6 +1,8 @@
-<?php include_once("../static/layouts/header.php") ?>
+<?php
+$sessiontype = 'anfitrion';
+include_once("../static/layouts/header.php");
+?>
 <h1>Añadir Apartamento</h1>
-<?php include_once("../static/session/anfitrion_session.php") ?>
 <form onsubmit="return addApartmentValidation()" method="POST" action="create_apartment.php">    
     <div class="mb-3">
         <label class="form-label">Ciudad:</label>

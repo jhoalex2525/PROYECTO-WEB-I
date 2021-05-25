@@ -1,5 +1,6 @@
 <?php
-    include_once '../static/session/general_session.php';
+    $sessiontype = 'all';
+    include_once '../static/session/session_validations.php';
     $id = $_SESSION['id'];
     include_once '../database/models/UsersModel.php';
     $usersModel = new UsersModel();    

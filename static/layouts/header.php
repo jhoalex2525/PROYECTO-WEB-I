@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +13,32 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <div class="iconnavbar">
-                    <img class="iconlogo" src="/PROYECTO WEB I/images/iconlogo.png" alt="" onclick="window.location.href='/PROYECTO WEB I/index.php'">                    
-                    <h class="bungeecss">WEROOMMATES</h1>
-                    <input type="button" value="Login" onclick="window.location.href='/PROYECTO WEB I/pages/login.php'" class="btn btn-primary">
-                </div>                
+    <?php    
+    if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
+        $sessiontype='index';        
+        include_once '../PROYECTO WEB I/static/session/session_validations.php';        
+    }
+    else{
+        if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'){
+            $sessiontype='index';            
+            include_once '../static/session/session_validations.php';
+            }
+        else{
+            include_once '../static/session/session_validations.php';
+        }
+    }    
+    ?>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div class="container-fluid iconnavbar">
+            <div class="float-right">
+                <a class="navbar-brand" href="/PROYECTO WEB I/index.php"><img class="iconlogo" src="/PROYECTO WEB I/images/iconlogo.png" alt=""></a>
             </div>
-        </nav>
-        <input type="button" value="Cerrar sesión" onclick="window.location.href='/PROYECTO WEB I/pages/logout_validation.php'" class="btn btn-primary">
+            <div class="float-right">
+                <a class="navbar-brand bungeecss" href="/PROYECTO WEB I/index.php">WEROOMMATES</a>
+            </div>            
+            <?php
+                echo ($loginlogoutbutton);
+            ?>
+        </div>
+    </nav>
+    <div class="container">
