@@ -1,6 +1,6 @@
 <?php
-include_once '../static/session/anfitrion_session.php';
-
+$sessiontype = 'all';
+include_once '../static/session/session_validations.php';
 include_once '../database/models/ApartmentModel.php';
 //Recibir los datos
 $emailadd = $_SESSION['email'];

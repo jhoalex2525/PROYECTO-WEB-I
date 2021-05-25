@@ -1,9 +1,11 @@
-<?php include_once("../static/layouts/header.php") ?>
+<?php 
+$sessiontype = 'anfitrion';
+include_once("../static/layouts/header.php");
+?>
     <h1>Apartamentos por propietario</h1>
     <input type="button" value="Añadir Apartamento" onclick="window.location.href='addapartment.php'" class="btn btn-primary">
     <input type="button" value="Volver a perfil" onclick="window.location.href='profile.php'" class="btn btn-primary">
 <?php  
-    include_once '../static/session/anfitrion_session.php';
     $email = $_SESSION['email'];
     include_once '../database/models/ApartmentModel.php';    
     $apartmentModel = new ApartmentModel();            

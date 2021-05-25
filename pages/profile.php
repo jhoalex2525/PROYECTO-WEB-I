@@ -1,8 +1,10 @@
-<?php include_once("../static/layouts/header.php") ?>
-<h1>Perfil Anfitrión</h1>
 <?php 
-    include_once '../static/session/general_session.php';
-    $id = $_SESSION['id']; 
+$sessiontype = 'all';
+include_once("../static/layouts/header.php");
+?>
+<h1>Perfil Anfitrión</h1>
+<?php     
+    $id = $_SESSION['id'];     
     $role = $_SESSION['role'];
     include_once '../database/models/UsersModel.php';
     $usersModel = new UsersModel();

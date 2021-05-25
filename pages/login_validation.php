@@ -10,6 +10,7 @@
             $role =  $row['role'];        
             $id =  $row['id'];
             $emaillogin =  $row['email'];
+            $passwordlogin = $row['password'];
             session_start();
             $_SESSION['email'] = $emaillogin;         
             $_SESSION['password'] = $passwordlogin;         

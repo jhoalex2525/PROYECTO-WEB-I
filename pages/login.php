@@ -1,5 +1,5 @@
-<?php include_once("../static/layouts/header.php") ?>
-<h1>Iniciar Sesión</h1>
+<?php include_once("../static/layouts/header.php");?>
+<h1>Inicio de Sesión</h1>
 <form onsubmit="return loginValidation()" method="POST" action="login_validation.php">
     <div class="mb-3">
         <label class="form-label">Correo electrónico:</label>

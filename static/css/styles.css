@@ -5,8 +5,9 @@ body{
 .iconnavbar{
     justify-content: flex-start;
 }
-.iconlogo{
-    width: 15%;
+.iconlogo{    
+    max-height: 50px;
+    max-width: 100%;
 }
 .picturetype1{
     width: 50%;
