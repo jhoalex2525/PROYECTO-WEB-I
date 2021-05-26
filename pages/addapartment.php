@@ -21,19 +21,19 @@ include_once("../static/layouts/header.php");
         <input type="text" class="form-control" id="gpsadd" name="gpsadd" required>
     </div>
     <div class="mb-3">
-        <label class="form-label">Número de habitaciones:</label>
+        <label class="form-label">Número de habitaciones</label>
         <input type="number" class="form-control" id="numberadd" name="numberadd" required>
     </div>
     <div class="mb-3">
-        <label class="form-label">Valor noche:</label>
+        <label class="form-label">Valor noche</label>
         <input type="number" step="any"class="form-control" id="valueadd" name="valueadd" required>
     </div>    
     <div class="mb-3">
-        <label class="form-label">Reseña habitación:</label>
+        <label class="form-label">Reseña habitación</label>
         <textarea type="text" class="form-control" style="height:200px" id="roomreviewadd" name="roomreviewadd" required></textarea>
     </div>
     <div class="mb-3">
-        <label class="form-label">Foto principal de vivienda:</label>
+        <label class="form-label">Foto principal de vivienda</label>
         <input type="text" class="form-control" id="photoadd" name="photoadd" required>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>

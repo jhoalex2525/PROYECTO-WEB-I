@@ -5,16 +5,23 @@ include_once("../static/layouts/header.php");
     <h1 class="espaciotitulos">Apartamentos por propietario</h1>
     <input type="button" value="Añadir Apartamento" onclick="window.location.href='addapartment.php'" class="btn btn-primary">
     <input type="button" value="Volver a perfil" onclick="window.location.href='profile.php'" class="btn btn-primary">
-<?php  
+<?php 
+
+// En la línea 43 se agrega Modal, para preguntar al usuario si realmente desea eliminar un registro 
     $email = $_SESSION['email'];
     include_once '../database/models/ApartmentModel.php';    
     $apartmentModel = new ApartmentModel();            
     $apartments = $apartmentModel -> getApartments($email);    
     while($row = mysqli_fetch_assoc($apartments)){
     $template = "
-    <div class='row'>
+    <div class='row listapartment'>
         <div class='col-md-6 mb-3 picturetype1align'>
-            <img class='picturetype2' src='{$row['photo']}' alt=''>
+            <div>    
+                <span class='bungeecss text-dark' id='numberadd'>{$row['town']}</span>
+            </div>
+            <div>
+                <img class='picturetype2' src='{$row['photo']}' alt=''>
+            </div>
         </div>
         <div class='col-md-6'>
             <form>
@@ -34,7 +41,7 @@ include_once("../static/layouts/header.php");
                 <a type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#deletemodal{$row['id']}'>Eliminar</a>
             </form>
         </div>
-    </div>
+    </div>    
     <div class='modal fade' id='deletemodal{$row['id']}' tabindex='-1' aria-labelledby='' aria-hidden='true'>
         <div class='modal-dialog'>
             <div class='modal-content'>
@@ -43,13 +50,12 @@ include_once("../static/layouts/header.php");
                     <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                 </div>
                 <div class='modal-body'>
-                    <p>Una vez eliminado el apartamento no podrá ser recuperado</p>
-                    <p>¿Realmente desea eliminarlo?</p>    
-                    {$row['id']}
+                    <p>Una vez eliminado el apartamento no podrá ser recuperado.</p>
+                    <p>¿Realmente desea eliminarlo?</p>                        
                 </div>
                 <div class='modal-footer'>
-                    <button type='button' class='btn btn-info' data-bs-dismiss='modal'>No</button>                    
-                    <a type='button' href='delete_apartment.php?id={$row['id']}' class='btn btn-warning'>Si</a>         
+                    <button type='button' class='btn btn-primary' data-bs-dismiss='modal'>No</button>                    
+                    <a type='button' href='delete_apartment.php?id={$row['id']}' class='btn btn-primary'>Si</a>         
                 </div>
             </div>
         </div>

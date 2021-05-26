@@ -2,10 +2,12 @@
 body{
     background-color: #fafafa;    
 }
+
 /* Estilos títulos */
 body .container .espaciotitulos{
     margin: 30px 0;
 }
+
 /* Estilos para barra de navegación */
 .iconlogo{    
     max-height: 50px;
@@ -16,6 +18,7 @@ body .container .espaciotitulos{
     color: white;
     text-decoration: none;
 }
+
 /* Estilo para fotos*/
 .picturetype1 img{    
     border-radius: 50%;
@@ -32,18 +35,6 @@ body .container .espaciotitulos{
     align-items: center;    
     justify-items: center;
 }
-.picturetype2{       
-    max-height: 400px;
-    max-width: 100%;
-    border-radius: 5%;
-}
-.picturetype3{       
-    max-height: 350px;
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5%;
-}
 .gradient{
     background: #abbaab;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
@@ -53,12 +44,80 @@ body .container .espaciotitulos{
     flex-direction: column;
     border-radius: 10px;
 }
+
 /* Estilo para botones */
+.btn{
+    margin: 1px 1px;
+}
 .btn-primary{
     background-color: black;
     border-color: black;
     margin-bottom: 5%;
 }
+.btn-outline-primary.login{
+    border-color: #E334A8;
+    color: white;    
+}
+.btn-outline-primary.login:hover{
+    background-color: #E334A8;
+    color: white;
+}
+.btn-outline-primary.logout{
+    border-color: #FF503B;
+    color: white;
+}
+.btn-outline-primary.logout:hover{
+    background-color: #FF503B;
+    color: white;
+}
+.btn-outline-primary.signup{
+    border-color: #B546FA;
+    color: white;
+}
+.btn-outline-primary.signup:hover{
+    background-color: #B546FA;
+    color: white;
+}
+.btn-outline-primary.home{
+    border-color: #8E8AE6;
+    color: white;
+}
+.btn-outline-primary.home:hover{
+    background-color: #8E8AE6;
+    color: white;
+}
+
+/*Estilos para vista todos los apartamentos index*/
+.form-control.index{
+    background-color: unset;
+}
+.row.index{
+    border-color: #8E8AE6;
+    border-style: solid;
+    border-radius: 1rem;
+    margin: 2px;
+}
+.picturetype3{       
+    max-height: 350px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+/*Estilos para vista todos los apartamentos por Anfitrión*/
+.row.listapartment{
+    border-color: #B546FA;
+    border-style: solid;
+    border-radius: 1rem;
+    margin: 2px;
+}
+.picturetype2{       
+    max-height: 400px;
+    max-width: 100%;
+    border-radius: 5%;
+}
+
 /* Estilos para Vista rápida a mis apartamentos*/
 .imagenesperfil{
     display: flex;    
@@ -74,7 +133,7 @@ body .container .espaciotitulos{
     position: relative;
     width: 150px;
     height: 150px;
-    margin: 0 34px 10px 0;  
+    margin: 0 17px;  
 }  
 .image {
     display: block;
@@ -109,4 +168,20 @@ body .container .espaciotitulos{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     white-space: nowrap;
+}
+
+/*Estilos flecha para mover la pagina hacia arriba*/
+.ir-arriba.md-48{
+    display: none;
+    background-repeat:no-repeat;
+    font-size:20px;
+    color:black;
+    cursor:pointer;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    z-index:2;
+}
+.material-icons.md-48 { 
+    font-size: 48px; 
 }

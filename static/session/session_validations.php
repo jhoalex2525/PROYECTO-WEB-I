@@ -1,5 +1,5 @@
 <?php
-//scrip php para identificar tipo de sesión
+//scrip php para identificar tipo de sesión y mostrar boton (login/logout/profile/signup) segun corresponda
 switch ($sessiontype){
     case 'all':
         session_start();
@@ -10,12 +10,12 @@ switch ($sessiontype){
         }
         else{
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-success'>Login</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-success ms-3'>Signup</a>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-outline-primary signup'>Signup</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>";            
             }
             else{
-                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-success me-2'>Perfil</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-danger ms-1'>Logout</a>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";            
             }
         }
     break;
@@ -28,12 +28,12 @@ switch ($sessiontype){
         }
         else{
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-success'>Login</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-success ms-3'>Signup</a>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-outline-primary signup'>Signup</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>";            
             }
             else{
-                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-success me-2'>Perfil</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-danger ms-1'>Logout</a>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";            
             }
         }
     break;
@@ -41,13 +41,13 @@ switch ($sessiontype){
         session_start();           
         if(isset($_SESSION['id'])){            
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-success me-2'>Perfil</a>                        
-                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-danger ms-1'>Logout</a>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>                        
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";            
             }            
         }
         else{
-            $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-success'>Login</a>
-                                <a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-success ms-3'>Signup</a>";            
+            $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-outline-primary signup'>Signup</a>
+                                <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>";            
         }
     break;
 }

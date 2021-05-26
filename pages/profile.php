@@ -48,7 +48,7 @@ include_once("../static/layouts/header.php");
         include_once '../database/models/ApartmentModel.php';    
         $apartmentModel = new ApartmentModel();            
         $apartments = $apartmentModel -> getApartments($email);    
-        echo "<div class='d-flex flex-wrap'>";
+        echo "<div class='d-flex flex-wrap justify-content-center'>";
         while($row = mysqli_fetch_assoc($apartments)){        
         $template = "
                     <div class='d-flex'>
