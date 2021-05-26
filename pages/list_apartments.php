@@ -2,7 +2,7 @@
 $sessiontype = 'anfitrion';
 include_once("../static/layouts/header.php");
 ?>
-    <h1>Apartamentos por propietario</h1>
+    <h1 class="espaciotitulos">Apartamentos por propietario</h1>
     <input type="button" value="Añadir Apartamento" onclick="window.location.href='addapartment.php'" class="btn btn-primary">
     <input type="button" value="Volver a perfil" onclick="window.location.href='profile.php'" class="btn btn-primary">
 <?php  
@@ -19,23 +19,42 @@ include_once("../static/layouts/header.php");
         <div class='col-md-6'>
             <form>
                 <div class='mb-3'>
-                    <label class='form-label'>Número de habitaciones:</label>
+                    <label class='form-label'>Número de habitaciones</label>
                     <input type='text' class='form-control' id='numberadd' name='numberadd' selected disabled value='{$row['rooms']}''>
                 </div>
                 <div class='mb-3'>
-                    <label class='form-label'>Valor noche:</label>
+                    <label class='form-label'>Valor noche</label>
                     <input type='text' class='form-control' id='valueadd' name='valueadd' selected disabled value='{$row['value']}'>
                 </div>
                 <div class='mb-3'>
-                    <label class='form-label'>Reseña habitación:</label>
+                    <label class='form-label'>Reseña habitación</label>
                     <textarea type='text' class='form-control' style='height:125px' id='roomreviewadd' name='roomreviewadd' selected disabled>{$row['roomreview']}</textarea>
                 </div>
-                <a type='button' href='edit_apartment.php?id={$row['id']}' class='btn btn-primary'>Actualizar</a>
-                <a type='button' href='delete_apartment.php?id={$row['id']}' class='btn btn-primary'>Eliminar</a>
+                <a type='button' href='edit_apartment.php?id={$row['id']}' class='btn btn-primary'>Actualizar</a>                
+                <a type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#deletemodal{$row['id']}'>Eliminar</a>
             </form>
+        </div>
+    </div>
+    <div class='modal fade' id='deletemodal{$row['id']}' tabindex='-1' aria-labelledby='' aria-hidden='true'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='modal-title' id='deletemodalLabel'>Eliminando Apartamento</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                </div>
+                <div class='modal-body'>
+                    <p>Una vez eliminado el apartamento no podrá ser recuperado</p>
+                    <p>¿Realmente desea eliminarlo?</p>    
+                    {$row['id']}
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-info' data-bs-dismiss='modal'>No</button>                    
+                    <a type='button' href='delete_apartment.php?id={$row['id']}' class='btn btn-warning'>Si</a>         
+                </div>
+            </div>
         </div>
     </div>";
     echo $template;
-    }
-?>
+    }    
+?>    
 <?php include_once("../static/layouts/footer.php") ?>

@@ -1,38 +1,112 @@
+/* Estilos cuerpo de aplicación */
 body{
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23416549' fill-opacity='0.1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: #fafafa;    
 }
-.iconnavbar{
-    justify-content: flex-start;
+/* Estilos títulos */
+body .container .espaciotitulos{
+    margin: 30px 0;
 }
+/* Estilos para barra de navegación */
 .iconlogo{    
     max-height: 50px;
     max-width: 100%;
-}
-.picturetype1{
-    width: 50%;
-}
-.picturetype1align, .homepageimages, .coverpagelogo{
-    text-align: center;
-    align-self: center;
 }
 .bungeecss{
     font-family: 'Bungee', cursive;
     color: white;
     text-decoration: none;
 }
-.row{
-    align-items: center;
+/* Estilo para fotos*/
+.picturetype1 img{    
+    border-radius: 50%;
+    height: 180px;
+    object-fit: cover;
 }
+.picturetype1align{
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;    
+}
+.row{
+    align-items: center;    
+    justify-items: center;
+}
+.picturetype2{       
+    max-height: 400px;
+    max-width: 100%;
+    border-radius: 5%;
+}
+.picturetype3{       
+    max-height: 350px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+}
+.gradient{
+    background: #abbaab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+/* Estilo para botones */
 .btn-primary{
     background-color: black;
     border-color: black;
     margin-bottom: 5%;
 }
-.coverpagelogo img{
-    width: 25%;
+/* Estilos para Vista rápida a mis apartamentos*/
+.imagenesperfil{
+    display: flex;    
 }
-.picturetype2{       
-    max-height: 400px;
-    max-width: 100%;
+.imagenesperfil img{
+    border-radius: 50%;
+    width: 150px;
+    object-fit: cover;    
+    height: 150px;
+    margin: 0 34px 10px 0;    
+}
+.containerslide {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 34px 10px 0;  
+}  
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(220, 230, 230);    
+    opacity: 0.8;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+.containerslide:hover .overlay {
+    border-radius: 50%;
+    width: 150px;
+    object-fit: cover;    
+    height: 150px;
+}
+.text {
+    color: rgb(12, 78, 78);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
 }

@@ -1,7 +1,8 @@
 <?php
     session_start();
     session_unset();
-    session_destroy();    
+    session_destroy();
+    $_SESSION['id']=0;
     echo "<script>alert('Ha cerrado sesión correctamente');
-              window.location='login.php'</script>";    
+              window.location='/PROYECTO WEB I/index.php'</script>";    
 ?>

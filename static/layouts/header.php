@@ -29,16 +29,16 @@
     }    
     ?>
     <nav class="navbar sticky-top navbar-dark bg-dark">
-        <div class="container-fluid iconnavbar">
-            <div class="float-right">
-                <a class="navbar-brand" href="/PROYECTO WEB I/index.php"><img class="iconlogo" src="/PROYECTO WEB I/images/iconlogo.png" alt=""></a>
-            </div>
-            <div class="float-right">
-                <a class="navbar-brand bungeecss" href="/PROYECTO WEB I/index.php">WEROOMMATES</a>
+        <div class="container-fluid">
+            <div class="">
+                <a class="navbar-brand bungeecss" href="/PROYECTO WEB I/index.php"><img class="iconlogo" src="/PROYECTO WEB I/images/iconlogo.png" alt="">WEROOMMATES</a>
             </div>            
-            <?php
-                echo ($loginlogoutbutton);
-            ?>
+            <div class="d-flex">
+                <a type='button' href='/PROYECTO WEB I/index.php' class='btn btn-success me-3'>Inicio</a>
+                <?php
+                    echo ($loginlogoutbutton);
+                ?>
+            </div>
         </div>
     </nav>
     <div class="container">
