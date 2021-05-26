@@ -10,14 +10,12 @@ switch ($sessiontype){
         }
         else{
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-                $loginlogoutbutton="<div class='float-left'>
-                                    <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-primary'>Login</a>
-                              </div>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-success'>Login</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-success ms-3'>Signup</a>";            
             }
             else{
-                $loginlogoutbutton="<div class='float-left'>
-                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-primary'>Logout</a>
-                              </div>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-success me-2'>Perfil</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-danger ms-1'>Logout</a>";            
             }
         }
     break;
@@ -30,27 +28,26 @@ switch ($sessiontype){
         }
         else{
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-                $loginlogoutbutton="<div class='float-left'>
-                                    <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-primary'>Login</a>
-                              </div>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-success'>Login</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-success ms-3'>Signup</a>";            
             }
             else{
-                $loginlogoutbutton="<div class='float-left'>
-                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-primary'>Logout</a>
-                              </div>";            
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-success me-2'>Perfil</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-danger ms-1'>Logout</a>";            
             }
         }
     break;
-    case 'index':
-        if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-            $loginlogoutbutton="<div class='float-left'>
-                                <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-primary'>Login</a>
-                          </div>";            
+    case 'index':        
+        session_start();           
+        if(isset($_SESSION['id'])){            
+            if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-success me-2'>Perfil</a>                        
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-danger ms-1'>Logout</a>";            
+            }            
         }
         else{
-            $loginlogoutbutton="<div class='float-left'>
-                                <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-primary'>Logout</a>
-                          </div>";            
+            $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-success'>Login</a>
+                                <a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-success ms-3'>Signup</a>";            
         }
     break;
 }

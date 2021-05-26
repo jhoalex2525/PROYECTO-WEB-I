@@ -2,7 +2,7 @@
 $sessiontype = 'anfitrion';
 include_once("../static/layouts/header.php");
 ?>
-<h1>Añadir Apartamento</h1>
+<h1 class="espaciotitulos">Añadir Apartamento</h1>
 <form onsubmit="return addApartmentValidation()" method="POST" action="create_apartment.php">    
     <div class="mb-3">
         <label class="form-label">Ciudad:</label>

@@ -41,7 +41,7 @@ class ApartmentModel
             $apartments = $this->db->query($sql);  
             return $apartments;
         }
-    }
+    }    
     public function getApartment($id){ //Clave en la URL
         $sql = "SELECT * FROM apartmentdata WHERE id = {$id}";
         $apartment = $this->db->query($sql)->fetch_assoc();

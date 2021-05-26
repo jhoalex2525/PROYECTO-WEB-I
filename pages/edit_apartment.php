@@ -2,7 +2,7 @@
 $sessiontype = 'anfitrion';
 include_once("../static/layouts/header.php");
 ?>
-    <h1>Editar Apartamento</h1>
+    <h1 class="espaciotitulos">Editar Apartamento</h1>
 <?php
     include_once '../database/models/ApartmentModel.php';
     $apartmentModel = new ApartmentModel();

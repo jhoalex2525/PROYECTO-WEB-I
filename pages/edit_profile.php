@@ -2,7 +2,7 @@
 $sessiontype = 'all';
 include_once("../static/layouts/header.php");
 ?>
-    <h1>Editar Perfil</h1>
+    <h1 class="espaciotitulos">Editar Perfil</h1>
 <?php 
     $id = $_SESSION['id'];
     $email = $_SESSION['email'];
