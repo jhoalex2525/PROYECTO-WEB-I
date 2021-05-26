@@ -1,5 +1,6 @@
 <?php
     include_once '../database/models/UsersModel.php';
+    
     //Recibir los datos
     $namesignup = $_POST['namesignup'];
     $emailsignup = $_POST['emailsignup'];
