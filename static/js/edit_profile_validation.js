@@ -1,3 +1,4 @@
+//Validación de campos formulario edición de usuario
 function editProfileValidation(){
     let nameedit = document.getElementById("nameedit").value;
     let emailedit = document.getElementById("emailedit").value;

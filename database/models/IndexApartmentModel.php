@@ -1,7 +1,7 @@
 <?php
 include_once '../PROYECTO WEB I/database/DBConnection.php';
 class ApartmentModel
-{ //Crea los campos del registro de apartamento
+{ //Crea los campos de los apartamentos registrados
     private $db = NULL;
     public function __construct()
     {

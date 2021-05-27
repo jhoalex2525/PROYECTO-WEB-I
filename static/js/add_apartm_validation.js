@@ -1,3 +1,4 @@
+//Validación de campos formulario registro de nuevo apartamento
 function addApartmentValidation(){
     let townadd = document.getElementById("townadd").value;
     let countryadd = document.getElementById("countryadd").value;

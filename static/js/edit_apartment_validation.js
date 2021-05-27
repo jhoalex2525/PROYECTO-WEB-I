@@ -1,3 +1,4 @@
+//Validación de campos formulario edición de apartamento
 function editApartmentValidation(){
     let townedit = document.getElementById("townedit").value;
     let countryedit = document.getElementById("countryedit").value;
