@@ -38,7 +38,7 @@
     }    
     ?> 
     
-    <!-- Barra de navegación -->
+    <!-- Barra de navegación fija-->
     <nav class="navbar sticky-top navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="">

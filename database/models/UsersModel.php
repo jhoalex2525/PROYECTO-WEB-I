@@ -42,7 +42,7 @@ class UsersModel
             return $user;
         }
     }    
-    public function getUser($id){ //Clave en la URL
+    public function getUser($id){
         $sql = "SELECT * FROM userdata WHERE id = {$id}";
         $user = $this->db->query($sql)->fetch_assoc();
         return $user;

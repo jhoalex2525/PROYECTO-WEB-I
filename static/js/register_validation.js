@@ -1,3 +1,4 @@
+//Validación de campos formulario registro de usuario
 function registerValidation(){
     let namesignup = document.getElementById("namesignup").value;
     let emailsignup = document.getElementById("emailsignup").value;

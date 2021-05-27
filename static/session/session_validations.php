@@ -1,7 +1,7 @@
 <?php
 //scrip php para identificar tipo de sesión y mostrar boton (login/logout/profile/signup) segun corresponda
 switch ($sessiontype){
-    case 'all':
+    case 'all': //Hace referencia a sin importar el rol de quien está logueado
         session_start();
         if($_SESSION['id']<=0){
             $pageToRedirect = "login.php";
@@ -19,7 +19,7 @@ switch ($sessiontype){
             }
         }
     break;
-    case 'anfitrion':
+    case 'anfitrion': //Hace referencia a rol Anfitrión
         session_start();
         if($_SESSION['role']!=='Anfitrión'){
             $pageToRedirect = "login.php";
