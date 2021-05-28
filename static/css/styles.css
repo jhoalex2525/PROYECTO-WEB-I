@@ -30,9 +30,9 @@ body .container .espaciotitulos{
     justify-items: center;
 }
 .gradient{
-    background: #abbaab;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #abbaab;  
+    background: -webkit-linear-gradient(to right, #ffffff, #abbaab); 
+    background: linear-gradient(to right, #ffffff, #abbaab);
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -81,15 +81,16 @@ body .container .espaciotitulos{
     color: white;
 }
 
-/*Estilos para vista todos los apartamentos index*/
+/*Estilos para vista todos los apartamentos en el index*/
 .form-control.index{
     background-color: unset;
 }
 .row.index{
     border-color: #8E8AE6;
-    border-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
     border-radius: 1rem;
-    margin: 2px;
+    margin: 20px 0;
 }
 .picturetype3{       
     max-height: 350px;
@@ -108,9 +109,10 @@ body .container .espaciotitulos{
 /*Estilos para vista todos los apartamentos por Anfitrión*/
 .row.listapartment{
     border-color: #B546FA;
-    border-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
     border-radius: 1rem;
-    margin: 2px;
+    margin: 20px 0;
 }
 .picturetype2{       
     max-height: 400px;

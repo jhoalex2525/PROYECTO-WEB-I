@@ -37,7 +37,7 @@ switch ($sessiontype){
             }
         }
     break;
-    case 'index':        
+    case 'index': //Página de inicio       
         session_start();           
         if(isset($_SESSION['id'])){            
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
