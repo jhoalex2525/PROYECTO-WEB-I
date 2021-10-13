@@ -23,10 +23,10 @@
 
 <body>
     <?php    
-    // Validaciones para el tipo de sesión y botones a mostrar 
+    // Validaciones para el tipo de sesión y botones a mostrar ASASdasdfasdf
     if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
         $sessiontype='index';        
-        include_once '../PROYECTO WEB I/static/session/session_validations.php';        
+        include_once '.../PROYECTO WEB I/static/session/session_validations.php';        
     }
     else{
         if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'){
