@@ -16,6 +16,9 @@ class ApartmentModel
             exit();
         }
         //consultar todos los registros de la bd
+
+
+        //Hola Mundo
         else {            
             $sql = "SELECT * FROM apartmentdata";            
             $apartments = $this->db->query($sql);  
