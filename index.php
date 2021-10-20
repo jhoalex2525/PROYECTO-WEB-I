@@ -6,6 +6,7 @@
     $apartments = $apartmentModel -> getApartmentsForIndex();    
     while($row = mysqli_fetch_assoc($apartments)){    
     $template = "
+    //ejemplo charles//
     <div class='row index'>
         <div class='col-md-6 mb-3 picturetype1align'>
             <div>    
