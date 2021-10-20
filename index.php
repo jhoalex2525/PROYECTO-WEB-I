@@ -3,7 +3,7 @@
 <?php    
     include_once '../PROYECTO WEB I/database/models/IndexApartmentModel.php';    
     $apartmentModel = new ApartmentModel();            
-    $apartments = $apartmentModel -> getApartmentsForIndex();    
+    $apartments = $apartmentModel -> getApartmentsForIndex();
     while($row = mysqli_fetch_assoc($apartments)){    
     $variable=6;
         $template = "
