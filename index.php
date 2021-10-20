@@ -8,7 +8,7 @@
     $template = "
     <div class='row index'>
         <div class='col-md-6 mb-3 picturetype1align'>
-        //prueba
+         
             <div>    
                 <span class='bungeecss text-dark' id='numberadd'>{$row['town']}</span>
             </div>
