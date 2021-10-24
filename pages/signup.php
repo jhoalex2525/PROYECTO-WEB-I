@@ -30,6 +30,7 @@ include_once("../static/layouts/header.php");
             <option value="null" selected disabled>Seleccione un rol</option>
             <option value="Anfitrión">Anfitrión</option>
             <option value="Invitado">Invitado</option>
+            <option value="Administrador">Administrador</option>
         </select>
     </div>
     <div class="mb-3">
