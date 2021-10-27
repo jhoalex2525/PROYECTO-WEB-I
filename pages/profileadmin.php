@@ -27,7 +27,7 @@ include_once("../static/layouts/header.php");
                 <p id="reviewprofile"><?php echo $getUser['personalreview']?></p>
             </div>
             <?php
-            if($role == 'administrador'){
+            if($role == 'Administrador'){
                 $template="
                 <a type='button' href='edit_profile.php' class='btn btn-primary'>Actualizar información</a>
                 <a type='button' href='list_apartments.php' class='btn btn-primary'>Mis Apartamentos</a>";
@@ -42,7 +42,7 @@ include_once("../static/layouts/header.php");
         </form>        
     </div>    
     <?php     
-    if($role == 'administrador'){
+    if($role == 'Administrador'){
         echo "<h3 class='espaciotitulos'>Vista rápida a mis apartamentos</h3>";
         $email = $_SESSION['email'];
         include_once '../database/models/ApartmentModel.php';    
