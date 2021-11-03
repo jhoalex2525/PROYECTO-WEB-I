@@ -50,9 +50,9 @@ switch ($sessiontype){
                                 <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>";            
         }
     break;
-    case 'Administrador': //Hace referencia a rol Administrador
+    case 'Admin': //Hace referencia a rol Admin
         session_start();
-        if($_SESSION['role']!=='Administrador'){
+        if($_SESSION['role']!=='Admin'){
             $pageToRedirect = "login.php";
             header ("Location: {$pageToRedirect}");
             exit;
@@ -60,11 +60,13 @@ switch ($sessiontype){
         else{
             if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
                 $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/signup.php' class='btn btn-outline-primary signup'>Signup</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>";            
+                                    <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Solicitudes</a>";            
             }
             else{
                 $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";            
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Solicitudes</a>";            
             }
         }
 }

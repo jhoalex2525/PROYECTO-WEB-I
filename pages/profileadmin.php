@@ -27,10 +27,9 @@ include_once("../static/layouts/header.php");
                 <p id="reviewprofile"><?php echo $getUser['personalreview']?></p>
             </div>
             <?php
-            if($role == 'Administrador'){
-                $template="
-                <a type='button' href='edit_profile.php' class='btn btn-primary'>Actualizar información</a>
-                <a type='button' href='list_apartments.php' class='btn btn-primary'>Mis Apartamentos</a>";
+            if($role == 'Admin'){
+                $template="<a type='button' href='edit_profile.php' class='btn btn-primary'>Actualizar información</a>
+                           <a type='button' href='list_apartments.php' class='btn btn-primary'>Mis Apartamentos</a>";
                 echo ($template);
             }
             else{
@@ -42,7 +41,7 @@ include_once("../static/layouts/header.php");
         </form>        
     </div>    
     <?php     
-    if($role == 'Administrador'){
+    if($role == 'Admin'){
         echo "<h3 class='espaciotitulos'>Vista rápida a mis apartamentos</h3>";
         $email = $_SESSION['email'];
         include_once '../database/models/ApartmentModel.php';    
