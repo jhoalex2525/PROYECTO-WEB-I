@@ -1,5 +1,6 @@
 <?php
 //scrip php para identificar tipo de sesión y mostrar boton (login/logout/profile/signup) segun corresponda
+
 switch ($sessiontype){
     case 'all': //Hace referencia a sin importar el rol de quien está logueado
         session_start();
@@ -14,9 +15,18 @@ switch ($sessiontype){
                                     <a type='button' href='/PROYECTO WEB I/pages/login.php' class='btn btn-outline-primary login'>Login</a>";            
             }
             else{
+                if ($_SESSION['role'] == 'Administrador') {
+                    
+                    
+                $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>
+                                    <a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Solicitudes</a>";            
+            }
+            else{
                 $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
                                     <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";            
             }
+        }
         }
     break;
     case 'anfitrion': //Hace referencia a rol Anfitrión
@@ -49,7 +59,7 @@ switch ($sessiontype){
                 }
                 else {
                     $loginlogoutbutton = "<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>                        
-                                          <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";
+                                    <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>";
                 }    
             }            
         }
