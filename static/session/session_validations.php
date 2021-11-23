@@ -75,7 +75,7 @@ switch ($sessiontype){
             header ("Location: {$pageToRedirect}");
             exit;
         }
-
+ 
         if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/pages/login.php'||$_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
 
             if ($_SESSION['role'] == 'Administrador') {
