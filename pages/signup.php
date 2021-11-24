@@ -27,9 +27,10 @@ include_once("../static/layouts/header.php");
     <div class="mb-3">
         <label class="form-label">Rol:</label>
         <select name="rolesignup" class="form-control" id="rolesignup" required>
-            <option value="null" selected disabled>Seleccione un rol</option>
+            <option value="null" selected disabled>Seleccione un Rol</option>
             <option value="Anfitrión">Anfitrión</option>
             <option value="Invitado">Invitado</option>
+            <option value="Administrador">Administrador</option>
         </select>
     </div>
     <div class="mb-3">
