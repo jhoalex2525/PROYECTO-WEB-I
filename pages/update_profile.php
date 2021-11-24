@@ -12,10 +12,23 @@
     $roleedit = $_POST['roleedit'];
     $photoedit = $_POST['photoedit'];
     $reviewedit = $_POST['reviewedit'];
+    
+    switch($roleedit){
+        case 'Anfitrión':
+            $estadoedit = 1;
+        break;
+        case 'Invitado':
+            $estadoedit = 1;
+        break;
+        case 'Administrador';
+            $estadoedit = 2;
+        break;
+    }
+
     if(!empty($nameedit)||!empty($emailedit)||!empty($countryedit)||!empty($townedit)||!empty($passwordedit)||!empty($reviewedit))
     {
         $UsersModel = new UsersModel();    
-        $usersModel-> updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, $passwordedit, $roleedit, $photoedit, $reviewedit);
+        $usersModel-> updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, $passwordedit, $roleedit, $photoedit, $reviewedit, $estadoedit);
         $_SESSION['role'] = $roleedit;
         echo "<script>alert('Sus datos han sido actualizados');
                 window.location='profile.php'</script>";

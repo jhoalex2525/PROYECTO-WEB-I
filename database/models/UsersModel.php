@@ -47,7 +47,7 @@ class UsersModel
         $user = $this->db->query($sql)->fetch_assoc();
         return $user;
     }
-    public function updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, $passwordedit, $roleedit, $photoedit, $reviewedit){
+    public function updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, $passwordedit, $roleedit, $photoedit, $reviewedit, $estadoedit){
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL de usuarios";
             exit();
@@ -55,7 +55,8 @@ class UsersModel
         //Actualizar registro a bd
         else {
         $sql ="UPDATE userdata SET name = '{$nameedit}', email  = '{$emailedit}', country = '{$countryedit}', town = '{$townedit}',
-                                   password = '{$passwordedit}', role = '{$roleedit}', photo = '{$photoedit}', personalreview = '{$reviewedit}'
+                                   password = '{$passwordedit}', role = '{$roleedit}', photo = '{$photoedit}', personalreview = '{$reviewedit}',
+                                   estado = '{$estadoedit}'
                                 WHERE id = '{$id}'";
         //Verifica query
         if ($this->db->query($sql) === TRUE) {
