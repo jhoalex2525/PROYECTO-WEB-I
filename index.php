@@ -3,8 +3,8 @@
 <?php
     include_once '../PROYECTO WEB I/database/models/IndexApartmentModel.php';    
     $apartmentModel = new ApartmentModel();            
-    $apartments = $apartmentModel -> getApartmentsForIndex();    
-    while($row = mysqli_fetch_assoc($apartments)){    
+    $apartments = $apartmentModel -> getApartmentsForIndex();
+    while($row = mysqli_fetch_assoc($apartments)){
     $template = "
     <div class='row index'>
         <div class='col-md-6 mb-3 picturetype1align'>
