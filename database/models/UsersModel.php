@@ -10,7 +10,7 @@ class UsersModel
         //Obtengo la conexión
         $this->db = $dbConnection->connect();
     }
-    public function insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup)
+    public function insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup, $estadosignup)
     {
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL de usuarios";
@@ -18,8 +18,8 @@ class UsersModel
         }
         //agregar registro a bd
         else {            
-            $sql = "INSERT INTO userdata (name,email,country,town,password,role,photo,personalreview) VALUES
-            ('{$namesignup}','{$emailsignup}','{$countrysignup}','{$townsignup}','{$passwordsignup}','{$rolesignup}','{$photosignup}','{$reviewsignup}')";
+            $sql = "INSERT INTO userdata (name,email,country,town,password,role,photo,personalreview,estado) VALUES
+            ('{$namesignup}','{$emailsignup}','{$countrysignup}','{$townsignup}','{$passwordsignup}','{$rolesignup}','{$photosignup}','{$reviewsignup}','{$estadosignup}')";
             //Verifica query
             if ($this->db->query($sql) === TRUE) {
                 echo "Registro de usuario exitoso";
