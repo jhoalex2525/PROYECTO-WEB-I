@@ -47,6 +47,11 @@ class UsersModel
         $user = $this->db->query($sql)->fetch_assoc();
         return $user;
     }
+    public function getAdminRequest(){
+        $sql = "SELECT * FROM userdata WHERE estado = {2}";
+        $admins = $this->db->query($sql);
+        return $admins;
+    }
     public function updateUser($id, $nameedit, $emailedit, $countryedit, $townedit, $passwordedit, $roleedit, $photoedit, $reviewedit){
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL de usuarios";
