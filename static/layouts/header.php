@@ -22,10 +22,10 @@
 </head>
 
 <body>
-    <?php    
-    // Validaciones para el tipo de sesión y botones a mostrar 
+    <?php   
+    // Validaciones para el tipo de sesión y botones a mostrar
     if($_SERVER['PHP_SELF']=='/PROYECTO WEB I/index.php'){
-        $sessiontype='index';        
+        $sessiontype='index';
         include_once '../PROYECTO WEB I/static/session/session_validations.php';        
     }
     else{
