@@ -39,14 +39,25 @@ include_once("../static/layouts/header.php");
                 if($role == 'Anfitrión'){
                     $template="
                     <option value='Anfitrión'>$role</option>                
-                    <option value='Invitado'>Invitado</option>";
+                    <option value='Invitado'>Invitado</option>
+                    <option value='Administrador'>Administrador</option>";
                     echo ($template);
                 }
                 else{
-                    $template="
-                    <option value='Invitado'>$role</option>                
-                    <option value='Anfitrión'>Anfitrión</option>";
-                    echo ($template);
+                    if ($role == 'Invitado') {
+                        $template = "
+                                    <option value='Invitado'>$role</option>                
+                                    <option value='Anfitrión'>Anfitrión</option>
+                                    <option value='Administrador'>Administrador</option>";
+                        echo ($template);
+                    }
+                    else{
+                        $template = "
+                                    <option value='Administrador'>$role</option>                
+                                    <option value='Anfitrión'>Anfitrión</option>
+                                    <option value='Invitado'>Invitado</option>";
+                        echo ($template);
+                    }
                 }                
                 ?>
             </select>
