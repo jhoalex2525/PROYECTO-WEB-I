@@ -1,6 +1,6 @@
 <?php include_once("static/layouts/header.php");?>
 <h1 class="espaciotitulos">Bienvenido</h1>
-<?php    
+<?php
     include_once '../PROYECTO WEB I/database/models/IndexApartmentModel.php';    
     $apartmentModel = new ApartmentModel();            
     $apartments = $apartmentModel -> getApartmentsForIndex();
