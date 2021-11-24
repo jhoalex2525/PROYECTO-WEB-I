@@ -3,14 +3,14 @@
 $sessiontype = 'Administrador';
 include_once("../static/layouts/header.php");
 ?>
-    <h1 class="espaciotitulos">Listado de Solicitudes</h1>
+    <h1 class="espaciotitulos">Solicitud de Administrador</h1>
     <input type="button" value="Tipo de solicitud" onclick="window.location.href='create_userdata.php'" class="btn btn-primary">
     <input type="button" value="Volver a perfil" onclick="window.location.href='profile.php'" class="btn btn-primary">
 <?php 
 
 // En la línea 43 se agrega Modal, para preguntar al usuario si realmente desea eliminar un registro 
     $email = $_SESSION['role'];
-    include_once '../database/pages/adminrequest.php';    
+    include_once '../database/pages/.php';    
     $apartmentModel = new ApartmentModel();            
     $apartments = $apartmentModel -> getApartments($email);    
     while($row = mysqli_fetch_assoc($apartments)){
