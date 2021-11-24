@@ -10,10 +10,10 @@ include_once("../static/layouts/header.php");
 
 // En la línea 43 se agrega Modal, para preguntar al usuario si realmente desea eliminar un registro 
     $email = $_SESSION['role'];
-    include_once '../database/pages/.php';    
-    $apartmentModel = new ApartmentModel();            
-    $apartments = $apartmentModel -> getApartments($email);    
-    while($row = mysqli_fetch_assoc($apartments)){
+    include_once '../database/pages/UsersModel.php';    
+    $usersmodel = new UsersModel();            
+    $users = $usersmodel -> getUser($email);    
+    while($row = mysqli_fetch_assoc($users)){
     $template = "
     <div class='row listapartment'>
         <div class='col-md-6 mb-3 picturetype1align'>
