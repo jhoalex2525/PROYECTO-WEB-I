@@ -41,7 +41,19 @@ class UsersModel
             $this->db->close();
             return $user;
         }
-    }    
+    }
+    public function getUsers($email){
+        if ($this->db->connect_errno) {
+            echo "Falló la conexión a MySQL de Usuarios";
+            exit();
+        }
+        //consultar todos los registros de la bd
+        else {            
+            $sql = "SELECT * FROM userdata WHERE email = '{$email}'";            
+            $users = $this->db->query($sql);  
+            return $users;
+        }
+    } 
     public function getUser($id){
         $sql = "SELECT * FROM userdata WHERE id = {$id}";
         $user = $this->db->query($sql)->fetch_assoc();
