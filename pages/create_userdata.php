@@ -10,10 +10,22 @@
     $rolesignup = $_POST['rolesignup'];
     $photosignup = $_POST['photosignup'];
     $reviewsignup = $_POST['reviewsignup'];
+    switch($rolesignup){
+        case 'Anfitrión':
+            $estadosingup = 1;
+        break;
+        case 'Invitado':
+            $estadosingup = 1;
+        break;
+        case 'Administrador';
+            $estadosingup = 2;
+        break;
+    }
+
     if(!empty($namesignup)||!empty($emailsignup)||!empty($countrysignup)||!empty($townsignup)||!empty($passwordsignup)||!empty($reviewsignup))
     {
         $UsersModel = new UsersModel();
-        $UsersModel->insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup);
+        $UsersModel->insert($namesignup, $emailsignup, $countrysignup, $townsignup, $passwordsignup, $rolesignup, $photosignup, $reviewsignup, $estadosingup);
         echo "<script>alert('El usuario han sido creado');
               window.location='login.php'</script>";
     }
