@@ -20,7 +20,7 @@ switch ($sessiontype){
                     
                 $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
                                     <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>
-                                    <a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Solicitudes</a>";            
+                                    <a type='button' href='/PROYECTO WEB I/pages/adminlist.php' class='btn btn-outline-primary signup'>Solicitudes</a>";            
             }
             else{
                 $loginlogoutbutton="<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>
@@ -55,7 +55,7 @@ switch ($sessiontype){
                 if ($_SESSION['role'] == 'Administrador') {
                     $loginlogoutbutton = "<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>                        
                     <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>
-                    <a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Solicitudes</a>";
+                    <a type='button' href='/PROYECTO WEB I/pages/adminlist.php' class='btn btn-outline-primary signup'>Solicitudes</a>";
                 }
                 else {
                     $loginlogoutbutton = "<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>                        
@@ -81,7 +81,7 @@ switch ($sessiontype){
             if ($_SESSION['role'] == 'Administrador') {
                 $loginlogoutbutton = "<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>                        
                 <a type='button' href='/PROYECTO WEB I/pages/logout_validation.php' class='btn btn-outline-primary logout'>Logout</a>
-                <a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Solicitudes</a>";
+                <a type='button' href='/PROYECTO WEB I/pages/adminlist.php' class='btn btn-outline-primary signup'>Solicitudes</a>";
             }
             else {
                 $loginlogoutbutton = "<a type='button' href='/PROYECTO WEB I/pages/profile.php' class='btn btn-outline-primary signup'>Perfil</a>                        
