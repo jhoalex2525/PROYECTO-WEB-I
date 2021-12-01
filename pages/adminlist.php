@@ -6,39 +6,34 @@ include_once("../static/layouts/header.php");
     <h1 class="espaciotitulos">Solicitud de Administrador</h1>
     <input type="button" value="Volver a perfil" onclick="window.location.href='profile.php'" class="btn btn-primary">
 <?php 
-
-// En la línea 43 se agrega Modal, para preguntar al usuario si realmente desea eliminar un registro 
-    $email = $_SESSION['role'];
+    $role = $_SESSION['role'];
     include_once '../database/models/UsersModel.php';    
     $usersmodel = new UsersModel();            
-    $users = $usersmodel -> getUsers($email);    
+    $users = $usersmodel -> getUsers($role);    
     while($row = mysqli_fetch_assoc($users)){
     $template = "
     <div class='row listapartment'>
-        <div class='col-md-6 mb-3 picturetype1align'>
-            <div>    
-                <span class='bungeecss text-dark' id='numberadd'>{$row['town']}</span>
-            </div>
+        <div class='col-md-6 mb-3 picturetype1align'>            
             <div>
                 <img class='picturetype2' src='{$row['photo']}' alt=''>
             </div>
         </div>
         <div class='col-md-6'>
-            <form>
+            <form method='POST' action='update_admin.php?id={$row['id']}'>
                 <div class='mb-3'>
-                    <label class='form-label'>Número de habitaciones</label>
-                    <input type='text' class='form-control' id='numberadd' name='numberadd' selected disabled value='{$row['rooms']}''>
+                    <label class='form-label'>Email</label>
+                    <input type='text' class='form-control' id='numberadd' name='numberadd' selected disabled value='{$row['email']}''>
                 </div>
                 <div class='mb-3'>
-                    <label class='form-label'>Valor noche</label>
-                    <input type='text' class='form-control' id='valueadd' name='valueadd' selected disabled value='{$row['value']}'>
+                    <label class='form-label'>Nombre</label>
+                    <input type='text' class='form-control' id='valueadd' name='valueadd' selected disabled value='{$row['name']}'>
                 </div>
                 <div class='mb-3'>
-                    <label class='form-label'>Reseña habitación</label>
-                    <textarea type='text' class='form-control' style='height:125px' id='roomreviewadd' name='roomreviewadd' selected disabled>{$row['roomreview']}</textarea>
+                    <label class='form-label'>Reseña Personal</label>
+                    <textarea type='text' class='form-control' style='height:125px' id='roomreviewadd' name='roomreviewadd' selected disabled>{$row['personalreview']}</textarea>
                 </div>
-                <a type='button' href='edit_apartment.php?id={$row['id']}' class='btn btn-primary'>Actualizar</a>                
-                <a type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#deletemodal{$row['id']}'>Eliminar</a>
+                <a type='button' class='btn btn-primary'>Aceptar</a>                
+                <a type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#deletemodal{$row['id']}'>Rechazar</a>
             </form>
         </div>
     </div>    
