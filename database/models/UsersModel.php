@@ -42,14 +42,14 @@ class UsersModel
             return $user;
         }
     }
-    public function getUsers($email){
+    public function getUsers($role){
         if ($this->db->connect_errno) {
             echo "Falló la conexión a MySQL de Usuarios";
             exit();
         }
         //consultar todos los registros de la bd
         else {            
-            $sql = "SELECT * FROM userdata WHERE email = '{$email}'";            
+            $sql = "SELECT * FROM userdata WHERE role = '{$role}' AND estado = 2";            
             $users = $this->db->query($sql);  
             return $users;
         }
